@@ -8,8 +8,8 @@
 	
 <body>
 
-		<button>Pritisni me</button>
-		
+		<button id="drugo">Pritisni me</button>
+		<button id="prvi">Dugme</button>
 
 </body>
 
@@ -19,8 +19,13 @@
 <script>
 	$(document).ready(function(){
 	
-		$("button").click(function(){
-			$("button").after("<h1> Marko</h1>");
+		$("#drugo").click(function(){
+			$("#drugo").after("<h1> Marko</h1>");
+		});
+		$("#prvi").click(function(){
+			$.get("marko/marko.txt", function(data){
+    				$("h1").after(data);
+  			});
 		});
 	});		
 </script>
